@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Title </title>
+  </head>
+  <body>
+    <div align="center">
+      <form method="post" action="{% url 'registration' %}" >
+        {% csrf_token %}
+        <h3> SIGN UP </h3>
+        <div class="form-group">
+            <label for="username"> Username: </label>
+            <br>
+            <input type="text" name="username" id="username" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <label for="password"> Password: </label>
+            <br>
+            <input type="password" name="password" id="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <input type="submit" value="SIGN UP">
+        </div>
+      <h3>Парооль должен содержать строчные и заглавные латинские буквы, цифры, а так же быть длиннее 6 символов</h3>
+        {% if invalid%}
+        <p> This username is already taken! Please choose another oneq12e312312! </p>
+        {% endif %}
+
+        {% if invalid_password_len%}
+        <p> Пароль слишком короткий</p>
+        {% endif %}
+
+        {% if invalid_password_lowercase%}
+        <p> Пароль должен содержать строчные латинские буквы</p>
+        {% endif %}
+
+        {% if invalid_password_uppercase%}
+        <p> Пароль должен содержать заглавные латинские буквы</p>
+        {% endif %}
+
+        {% if invalid_password_number%}
+        <p> Пароль должен содержать цифры</p>
+        {% endif %}
+
+      </form>
+    </div>
+  </body>
+</html>
