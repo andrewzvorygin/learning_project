@@ -32,12 +32,27 @@ def call_click(request):
     return HttpResponse(main_cycle.coinsCount)
 
 
+# def buy_boost(request):
+#     main_cycle = MainCycle.objects.filter(user=request.user)[0]
+#     boost = Boost()
+#     boost.mainCycle = main_cycle
+#     boost.save()
+#     boost.upgrade()
+#     main_cycle.save()
+#     return HttpResponse(main_cycle.clickPower)
+
 def buy_boost(request):
-    main_cycle = MainCycle.objects.filter(user=request.user)[0]
-    boost = Boost()
-    boost.mainCycle = main_cycle
-    boost.save()
-    boost.upgrade()
-    main_cycle.save()
-    return HttpResponse(main_cycle.clickPower)
+    mainCycle = MainCycle.objects.filter(user=request.user)[0]
+    boosts = Boost.objects.filter(mainCycle=mainCycle)
+    if len(boosts) == 0:
+        boost = Boost()
+        boost.mainCycle = mainCycle
+        boost.upgrade()
+        boost.save()
+    else:
+        boosts[0].mainCycle = mainCycle
+        boosts[0].upgrade()
+        boosts[0].save()
+    mainCycle.save()
+    return HttpResponse(mainCycle.clickPower)
 

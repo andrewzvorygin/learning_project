@@ -3,7 +3,6 @@ async function callClick(){
                 method: 'GET'
             });
             let answer = await response.json();
-            console.log(answer)
             document.getElementById('data').innerHTML = answer;
         }
 
