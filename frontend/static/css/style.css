@@ -1,0 +1,18 @@
+.money{
+  opacity: 0.7;
+  width: 200px;
+  height: 200px;
+}
+
+.catgirl:hover{
+  opacity: 0.8;
+}
+
+.money:active{
+  opacity: 1;
+}
+
+.boost{
+  width: 150px;
+  height: 150px;
+}

@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:sqlite:C:\Users\andre\OneDrive\Рабочий стол\auth\mysite\db.sqlite3</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="db [2]" uuid="19274013-5d77-4982-aaa2-f8080d78f8f8">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\andre\OneDrive\Рабочий стол\Зворыгин Андрей АТ-03\mysite\db.sqlite3</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
