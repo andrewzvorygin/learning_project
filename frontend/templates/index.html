@@ -1,4 +1,3 @@
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -12,14 +11,20 @@
   </head>
   <body onload="getUser({{user.id}})">
      <main>
+
       <div align='center'>
-        <h3> Привет, <div id="user">{{user}}<div/>! </h3>
+        <h3> Привет, <div id="user">%user%<div/>! </h3>
         <div class="logout"><a href="/logout">LOGOUT</a></div>
-        <h3> Сила твоего клика равна <div id="clickPower">{{mainCycle.clickPower}}</div> </h3>
-        <h3>У тебя есть <div id="data">{{ mainCycle.coinsCount }}</div> монет </h3>
+        <h3>У тебя имеется <div id="data">%coins%</div> монет </h3>
+        <h3> Сила твоего клика <div id="clickPower">%clickPower%</div> </h3>
+        <h3> Сила твоего авто клика <div id="autoClickPower"> {{mainCycle.autoClickPower}} </div> монет в секунду </h3>
         <input type="image" class="money" src="{% static 'images/money.jpg' %}" onclick="callClick()" />
-        <input type="image" class="money boost" src="{% static 'images/boost.jpg' %}" onclick="buyBoost()" />
+          <div>зелёный буст - автобуст</div>
+        <div class="boost-wrapper" id="boost-wrapper">
+
+        </div>
       </div>
+
     </main>
   </body>
 </html>
